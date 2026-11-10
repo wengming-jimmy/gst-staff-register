@@ -73,7 +73,7 @@ input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #d67ba8
 </div>
 <label>組別 *
 <select id="group" required>
-<option value="">請選擇組別</option><option>行政組</option><option>場控組</option><option>總務組</option><option>佈置組</option><option>交通秩序組</option><option>聯絡組</option><option>報到接待組</option><option>舞台組</option><option>典禮組</option><option>兌獎組</option><option>餐飲服務組</option><option>環保組</option><option>機動組</option><option>資訊組</option><option>文宣組</option><option>醫療團</option><option>其他</option>
+<option value="">請選擇組別</option><option>GST 協調長</option><option>GST 副協調長</option><option>行政組</option><option>場控組</option><option>總務組</option><option>佈置組</option><option>交通秩序組</option><option>聯絡組</option><option>報到接待組</option><option>舞台組</option><option>典禮組</option><option>兌獎組</option><option>餐飲服務組</option><option>環保組</option><option>機動組</option><option>資訊組</option><option>文宣組</option><option>醫療團</option><option>其他</option>
 </select></label>
 <label id="unitWrap" class="hidden">所屬單位 *<input id="unit" placeholder="例如：XX獅子會"></label>
 <button type="submit" id="submitBtn">✨ 送出登記，看看我的星座鼓勵</button>
@@ -108,6 +108,8 @@ const ZODIAC=[
  {name:'雙魚座',from:[2,19],to:[3,20],good:'同理心強、溫柔包容、直覺細膩',msg:'你能感受到別人的心情，這份溫柔會讓每一位參加者都覺得被好好對待，謝謝你！'}
 ];
 const GROUP_PRAISE={
+'GST 協調長':'你的統籌與領導，能把各組和專區都整合起來，是嘉年華最核心的掌舵者！',
+'GST 副協調長':'你的協調與支援，能把各組串連起來，是嘉年華順利推動的重要推手！',
 '行政組':'你的行政與統整能力，能讓大小事務都有條有理，是嘉年華順利運轉的關鍵！',
 '場控組':'你的臨場掌控力，能讓整場流程順順走，遇到狀況也能冷靜調整！',
 '總務組':'你的細心與張羅能力，能讓桌椅、旗幟、物資都到位，現場絕不缺東缺西！',

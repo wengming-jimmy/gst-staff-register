@@ -83,7 +83,7 @@ async function loadList(){
     rows.forEach(r=>{
       html+='<tr><td>'+esc(r.name)+'</td><td>'+esc(r.gender)+'</td><td>'+esc(r.phone)+'</td><td>'+esc(r.email)+'</td><td>'+esc(r.birthday)+'<br>'+esc(r.zodiac)+'</td><td>'+esc(r.size)+'／'+esc(r.diet)+ '</td><td>'+esc(r.group)+'</td><td>'+esc(r.unit)+'</td><td>'+esc(r.time)+'</td><td><button onclick="editRow('+r.row+')">更改</button> <button class="danger" onclick="delRow('+r.row+')">刪除</button></td></tr>';
       html+='<tr id="edit-'+r.row+'" class="hidden"><td colspan="9"><div class="editform" data-row="'+r.row+'">'
-      +field('性別','gender',r.gender,['男生','女生'])+field('姓名','name',r.name)+field('電話','phone',r.phone)+field('Email','email',r.email)+field('生日','birthday',r.birthday)+field('星座','zodiac',r.zodiac)+field('衣服尺寸','size',r.size,['S','M','L','XL','2XL','3XL'])+field('飲食習慣','diet',r.diet,['葷食','素食'])+field('組別','group',r.group,['行政組', '場控組', '總務組', '佈置組', '交通秩序組', '聯絡組', '報到接待組', '舞台組', '典禮組', '兌獎組', '餐飲服務組', '環保組', '機動組', '資訊組', '文宣組', '醫療團', '其他'])+field('自填單位','unit',r.unit)
+      +field('性別','gender',r.gender,['男生','女生'])+field('姓名','name',r.name)+field('電話','phone',r.phone)+field('Email','email',r.email)+field('生日','birthday',r.birthday)+field('星座','zodiac',r.zodiac)+field('衣服尺寸','size',r.size,['S','M','L','XL','2XL','3XL'])+field('飲食習慣','diet',r.diet,['葷食','素食'])+field('組別','group',r.group,['GST 協調長', 'GST 副協調長', '行政組', '場控組', '總務組', '佈置組', '交通秩序組', '聯絡組', '報到接待組', '舞台組', '典禮組', '兌獎組', '餐飲服務組', '環保組', '機動組', '資訊組', '文宣組', '醫療團', '其他'])+field('自填單位','unit',r.unit)
       +'</div><button onclick="saveRow('+r.row+')">儲存更改</button> <button class="secondary" onclick="cancelEdit('+r.row+')">取消</button></td></tr>';
     });
     html+='</table>';
