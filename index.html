@@ -171,7 +171,8 @@ document.getElementById('form').addEventListener('submit',async(e)=>{
     if(!window.APP_API){throw new Error('no api');}
     const res=await fetch(window.APP_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({token:window.APP_TOKEN,action:'write',gender,name,phone,email,birthday,zodiac:z.name,size,diet,group,unit})});
     const data=await res.json();
-    saved=data.ok?'✅ 已經成功登記，後台看得到你的資料囉！':'⚠️ 送出時遇到問題：'+(data.error||'未知錯誤')+'，請再試一次或聯絡主辦人。';
+    if(data.ok){saved=data.emailSent===false?'✅ 已經成功登記，但確認信沒寄出去，請聯絡主辦人再確認一次。':'✅ 已經成功登記，確認信已寄到你的 Email，後台也看得到你的資料囉！';}
+    else{saved='⚠️ 送出時遇到問題：'+(data.error||'未知錯誤')+'，請再試一次或聯絡主辦人。';}
   }catch(ex){saved='⚠️ 目前無法連到資料庫，請檢查網路後再試一次，魔法卡片先給你看，資料尚未存入。';}
   document.getElementById('step2').classList.add('hidden');
   document.getElementById('resultCard').classList.remove('hidden');
